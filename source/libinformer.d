@@ -4,6 +4,7 @@ import std.socket;
 import bmessage;
 import std.json;
 import std.string;
+import std.stdio;
 
 public final class BesterInformerClient
 {
@@ -27,6 +28,18 @@ public final class BesterInformerClient
         }
     }
 
+    public string getServerInfo()
+    {
+        /* TODO: Implement me */
+        return "";
+    }
+
+    public bool isClient(string username)
+    {
+        /* TODO: Implement me */
+        return true;
+    }
+
     public string[] getClients()
     {
         string[] clientList;
@@ -35,7 +48,7 @@ public final class BesterInformerClient
 
         JSONValue commandBlock;
         commandBlock["type"] = "listClients";
-        
+
         message["command"] = commandBlock;
 
         sendMessage(informerSocket, message);
