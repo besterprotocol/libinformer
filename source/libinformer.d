@@ -28,10 +28,25 @@ public final class BesterInformerClient
         }
     }
 
-    public string getServerInfo()
+    public JSONValue getServerInfo()
     {
+        /* The server info */
+        JSONValue serverInfo;
+
+         JSONValue message;
+
+        JSONValue commandBlock;
+        commandBlock["type"] = "serverInfo";
+
+        message["command"] = commandBlock;
+
+        sendMessage(informerSocket, message);
+
+        JSONValue response;
+        receiveMessage(informerSocket, response);
+
         /* TODO: Implement me */
-        return "";
+        return serverInfo;
     }
 
     public bool isClient(string username)
