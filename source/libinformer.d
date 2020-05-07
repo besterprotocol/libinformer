@@ -33,7 +33,7 @@ public final class BesterInformerClient
         /* The server info */
         JSONValue serverInfo;
 
-         JSONValue message;
+        JSONValue message;
 
         JSONValue commandBlock;
         commandBlock["type"] = "serverInfo";
@@ -44,6 +44,8 @@ public final class BesterInformerClient
 
         JSONValue response;
         receiveMessage(informerSocket, response);
+
+        serverInfo = response["data"];
 
         /* TODO: Implement me */
         return serverInfo;
